@@ -5,7 +5,7 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local act = wezterm.action
 
-config.color_scheme = "AdventureTime"
+config.color_scheme = "Kanagawa (Gogh)"
 config.font_size = 18.0
 config.font = wezterm.font("MesloLGS NF")
 
