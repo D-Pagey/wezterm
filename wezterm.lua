@@ -12,6 +12,8 @@ config.font = wezterm.font("MesloLGS NF")
 config.keys = {
 	{ key = "{", mods = "SHIFT|ALT", action = act.MoveTabRelative(-1) },
 	{ key = "}", mods = "SHIFT|ALT", action = act.MoveTabRelative(1) },
+	{ key = "UpArrow", mods = "SHIFT", action = act.ScrollByLine(-1) },
+	{ key = "DownArrow", mods = "SHIFT", action = act.ScrollByLine(1) },
 }
 
 return config
