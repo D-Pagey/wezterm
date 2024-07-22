@@ -16,4 +16,15 @@ config.keys = {
 	{ key = "DownArrow", mods = "SHIFT", action = act.ScrollByLine(1) },
 }
 
+config.background = {
+	{
+		source = {
+			Color = "#1F1F28",
+		},
+		width = "100%",
+		height = "100%",
+		opacity = 0.90,
+	},
+}
+
 return config
