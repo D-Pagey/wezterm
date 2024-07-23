@@ -1,13 +1,10 @@
--- Pull in the wezterm API
 local wezterm = require("wezterm")
-
--- This will hold the configuration.
 local config = wezterm.config_builder()
 local act = wezterm.action
 
-config.color_scheme = "Kanagawa (Gogh)"
-config.font_size = 18.0
 config.font = wezterm.font("MesloLGS NF")
+config.font_size = 18.0
+config.window_background_opacity = 0.85
 
 config.keys = {
 	{ key = "{", mods = "SHIFT|ALT", action = act.MoveTabRelative(-1) },
@@ -16,15 +13,13 @@ config.keys = {
 	{ key = "DownArrow", mods = "SHIFT", action = act.ScrollByLine(1) },
 }
 
-config.background = {
-	{
-		source = {
-			Color = "#1F1F28",
-		},
-		width = "100%",
-		height = "100%",
-		opacity = 0.90,
-	},
-}
+-- change the theme depending on if the sun is up in London
+local suntime = wezterm.time.now():sun_times(51.5, -0.12)
+
+if suntime.up then
+	config.color_scheme = "Gruvbox (Gogh)"
+else
+	config.color_scheme = "Gruvbox Dark (Gogh)"
+end
 
 return config
