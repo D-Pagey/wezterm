@@ -16,11 +16,11 @@ config.keys = {
 -- change the theme depending on if the sun is up in London
 local suntime = wezterm.time.now():sun_times(51.5, -0.12)
 
-if suntime.up and suntime.progression < 0.5 then
+if suntime.up and suntime.progression < 0.6 then
 	config.color_scheme = "Gruvbox (Gogh)"
 elseif suntime.up then
 	config.color_scheme = "Catppuccin Macchiato (Gogh)"
-elseif not suntime.up and suntime.progression < 0.25 then
+elseif suntime.progression < 0.25 then
 	config.color_scheme = "Gruvbox Dark (Gogh)"
 else
 	config.color_scheme = "Breath Darker (Gogh)"
