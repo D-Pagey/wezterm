@@ -5,6 +5,7 @@ local act = wezterm.action
 config.font = wezterm.font("MesloLGS NF")
 config.font_size = 18.0
 config.window_background_opacity = 0.85
+config.send_composed_key_when_left_alt_is_pressed = true
 
 config.keys = {
 	{ key = "{", mods = "SHIFT|ALT", action = act.MoveTabRelative(-1) },
@@ -15,7 +16,7 @@ config.keys = {
 
 -- change the theme depending on if the sun is up in London
 local suntime = wezterm.time.now():sun_times(51.5, -0.12)
-
+print(suntime)
 if suntime.up and suntime.progression < 0.6 then
 	config.color_scheme = "Gruvbox (Gogh)"
 elseif suntime.up then
