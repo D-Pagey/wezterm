@@ -4,7 +4,6 @@ local act = wezterm.action
 
 config.font = wezterm.font("MesloLGS NF")
 config.font_size = 18.0
--- config.window_background_opacity = 0.85
 config.send_composed_key_when_left_alt_is_pressed = true
 
 config.keys = {
@@ -14,17 +13,6 @@ config.keys = {
 	{ key = "DownArrow", mods = "SHIFT", action = act.ScrollByLine(1) },
 }
 
--- change the theme depending on if the sun is up in London
-local suntime = wezterm.time.now():sun_times(51.5, -0.12)
-
-if suntime.up and suntime.progression < 0.6 then
-	config.color_scheme = "Gruvbox (Gogh)"
-elseif suntime.up then
-	config.color_scheme = "Catppuccin Macchiato (Gogh)"
-elseif suntime.progression < 0.25 then
-	config.color_scheme = "Gruvbox Dark (Gogh)"
-else
-	config.color_scheme = "Breath Darker (Gogh)"
-end
+config.color_scheme = "Catppuccin Macchiato (Gogh)"
 
 return config
