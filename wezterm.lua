@@ -2,6 +2,10 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local act = wezterm.action
 
+config.font = wezterm.font_with_fallback({
+	"MesloLGS NF",
+	"FiraCode Nerd Font",
+})
 config.font = wezterm.font("MesloLGS NF")
 config.font_size = 16.0
 config.send_composed_key_when_left_alt_is_pressed = true
